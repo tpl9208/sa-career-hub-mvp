@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- SA Career Hub homepage -->
+  <url>
+    <loc>https://sacareerhub.pages.dev/</loc>
+  </url>
+
+  <!-- Career tips and advice -->
+  <url>
+    <loc>https://sacareerhub.pages.dev/career-tips</loc>
+  </url>
+
+  <!-- Learnership opportunities -->
+  <url>
+    <loc>https://sacareerhub.pages.dev/category?type=Learnership</loc>
+  </url>
+
+  <!-- Internship opportunities -->
+  <url>
+    <loc>https://sacareerhub.pages.dev/category?type=Internship</loc>
+  </url>
+
+  <!-- Graduate programmes -->
+  <url>
+    <loc>https://sacareerhub.pages.dev/category?type=Graduate</loc>
+  </url>
+
+  <!-- Jobs and entry-level opportunities -->
+  <url>
+    <loc>https://sacareerhub.pages.dev/category?type=Job</loc>
+  </url>
+
+</urlset>
