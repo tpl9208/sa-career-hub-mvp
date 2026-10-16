@@ -31,4 +31,14 @@
     <loc>https://sacareerhub.pages.dev/category?type=Job</loc>
   </url>
 
+  <!-- Training opportunities -->
+  <url>
+    <loc>https://sacareerhub.pages.dev/category?type=Training</loc>
+  </url>
+
+  <!-- Bursary opportunities -->
+  <url>
+    <loc>https://sacareerhub.pages.dev/category?type=Bursary</loc>
+  </url>
+
 </urlset>
