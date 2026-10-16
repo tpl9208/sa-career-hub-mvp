@@ -30,5 +30,175 @@
     "description": "A Public Management work-integrated learning opportunity advertised by the KwaZulu-Natal Department of Social Development. The official listing shows a stipend of R4,000. Review the official advert for qualification requirements and application instructions before applying.",
     "requirements": [],
     "applicationUrl": "https://www.eservices.gov.za/eRecruitmentCitizenKZN/Vacancy/BrowseVacancy/1"
+  },
+  {
+    "id": "sasol-artisan-maintenance-learnership-2026",
+    "type": "Learnership",
+    "title": "Artisan Maintenance Learnership",
+    "company": "Sasol",
+    "province": "Mpumalanga",
+    "field": "Engineering and Artisan Trades",
+    "experience": "Entry-level; see qualification requirements",
+    "closingDate": "2026-10-23",
+    "description": "Sasol is inviting applications for a 36-month Artisan Maintenance Learnership in Secunda. Listed trade areas include mechanical fitting, instrumentation, electrical work, welding and rigging.",
+    "requirements": [
+      "Completed National Senior Certificate or equivalent with the required Mathematics, English and Technical or Physical Science subjects, or an eligible N3 qualification",
+      "Check the official advert for the exact subject requirements for your trade"
+    ],
+    "applicationUrl": "https://jobs.sasol.com/job/Secunda-Learnership-Artisan-Maintenance-%28Secunda%29/1446750233/"
+  },
+  {
+    "id": "sasol-learner-administrator-learnership-2026",
+    "type": "Learnership",
+    "title": "Learner Administrator",
+    "company": "Sasol",
+    "province": "Gauteng",
+    "field": "Business Administration",
+    "experience": "Entry-level",
+    "closingDate": "2026-11-06",
+    "description": "Sasol is offering a 12-month learnership combining theoretical learning with practical workplace experience. The programme covers foundational literacy, numeracy, communication, computer skills and basic business principles. Locations include Sandton, Sasolburg and Secunda.",
+    "requirements": [
+      "Completed Grade 12 or Matric",
+      "Between 18 and 29 years old",
+      "A diploma or degree in fields such as Supply Chain, Finance, IT, HR or Marketing is an added advantage"
+    ],
+    "applicationUrl": "https://jobs.sasol.com/job/Sandton-Learner-Administrator/1448342533/"
+  },
+  {
+    "id": "funza-lushaka-bursary-2027",
+    "type": "Bursaries",
+    "title": "Funza Lushaka Bursary Programme 2027",
+    "company": "Department of Basic Education",
+    "province": "Nationwide",
+    "field": "Teaching and Education",
+    "experience": "Eligible prospective and returning teaching students",
+    "closingDate": "2027-01-31",
+    "description": "The Funza Lushaka Bursary Programme supports eligible students pursuing teaching qualifications. Applications for the 2027 academic year are available through the official bursary portal. Returning bursars have a separate earlier deadline.",
+    "requirements": [
+      "Meet the programme's academic and eligibility requirements",
+      "First-time applicants must be 30 years old or younger",
+      "Review the official portal for qualification and application requirements"
+    ],
+    "applicationUrl": "https://www.funzalushaka.doe.gov.za/Home/"
+  },
+  {
+    "id": "gauteng-college-nursing-intake-2027",
+    "type": "Training",
+    "title": "Student Nurse Intake 2027 - Diploma in Nursing",
+    "company": "Gauteng College of Nursing",
+    "province": "Gauteng",
+    "field": "Nursing and Healthcare",
+    "experience": "Student entry; academic requirements apply",
+    "closingDate": "2026-10-30",
+    "description": "The Gauteng College of Nursing is accepting applications for its 2027 Diploma in Nursing intake. The programme combines classroom education with practical clinical training at designated Gauteng campuses and healthcare facilities.",
+    "requirements": [
+      "Applicants must meet the prescribed school-leaving qualification and subject requirements",
+      "Citizenship and Gauteng residence requirements apply",
+      "Check the official application portal for the current intake advert and eligibility criteria"
+    ],
+    "applicationUrl": "https://www.gauteng.gov.za/Services/GetServices?isFromDepartment=true&serviceId=CPM-001815&taxonomyItemId=CPM-001006"
+  },
+  {
+    "id": "eskom-graduate-business-enablement-strategy-2026",
+    "type": "Graduate",
+    "title": "Graduate in Training - Business Enablement and Strategy",
+    "company": "Eskom",
+    "province": "Gauteng",
+    "field": "Business, Marketing, IT and Communications",
+    "experience": "Graduate; no prior experience required",
+    "closingDate": "2026-10-19",
+    "description": "Eskom is recruiting graduates and a learner intern for its Business Enablement and Strategy function in Sunninghill. The programme offers institutional and on-the-job training.",
+    "requirements": [
+      "South African citizenship is required",
+      "Graduate positions require a completed relevant bachelor's degree at NQF Level 7",
+      "Eligible fields include Digital Marketing, Graphic Design, Business Management, Marketing, IT, Public Relations and Journalism",
+      "Check the official advert for the separate learner intern qualification requirements"
+    ],
+    "applicationUrl": "https://eskomcareers.ci.hr/applicant/index.php?controller=Listings&listingid=a89a5136-475f-44ec-b643-adf462526b32&method=view"
+  },
+  {
+    "id": "eskom-graduate-environment-2026",
+    "type": "Graduate",
+    "title": "Graduate in Training - Environment",
+    "company": "Eskom",
+    "province": "Mpumalanga",
+    "field": "Environmental Management and Natural Sciences",
+    "experience": "Graduate; entry-level",
+    "closingDate": "2026-10-30",
+    "description": "Eskom is advertising a Graduate in Training opportunity in its Environment function at Grootvlei Power Station in Balfour. The position provides an opportunity to gain workplace experience in the environmental field.",
+    "requirements": [
+      "South African citizenship is required",
+      "A completed B-degree or Advanced Diploma in Natural Science or Environmental Management at NQF Level 7 with 360 credits",
+      "Check the official advert for the complete selection criteria"
+    ],
+    "applicationUrl": "https://eskomcareers.ci.hr/applicant/index.php?controller=Listings&listingid=bc8d098e-f70e-4a9c-9767-664230260dd0&method=view"
+  },
+  {
+    "id": "eskom-graduate-stakeholder-management-2026",
+    "type": "Graduate",
+    "title": "Graduate in Training - Stakeholder Management",
+    "company": "Eskom",
+    "province": "Mpumalanga",
+    "field": "Communications and Public Relations",
+    "experience": "Graduate; no prior experience required",
+    "closingDate": "2026-10-30",
+    "description": "Eskom is recruiting a Graduate in Training for Stakeholder Management at Grootvlei Power Station in Balfour. The position provides workplace exposure in communication and stakeholder-related activities.",
+    "requirements": [
+      "South African citizenship is required",
+      "A completed B-degree, BTech or Advanced Diploma in Communication or Public Relations at NQF Level 7 with 360 credits",
+      "Check the official advert for the full selection criteria"
+    ],
+    "applicationUrl": "https://eskomcareers.ci.hr/applicant/index.php?controller=Listings&listingid=1ee60e7d-d55a-413e-9f87-b676bfac6269&method=view"
+  },
+  {
+    "id": "kzn-edtea-engineering-bursary-2026",
+    "type": "Bursaries",
+    "title": "Aeronautical, Mechanical and Civil Engineering Bursary",
+    "company": "KwaZulu-Natal Department of Economic Development, Tourism and Environmental Affairs",
+    "province": "KwaZulu-Natal",
+    "field": "Engineering",
+    "experience": "Students; eligibility conditions apply",
+    "closingDate": "2026-10-30",
+    "description": "The KwaZulu-Natal Department of Economic Development, Tourism and Environmental Affairs has published an engineering bursary application opportunity for aeronautical, mechanical and civil engineering studies.",
+    "requirements": [
+      "Check the official bursary advert for eligible qualifications, academic requirements and supporting documents",
+      "Confirm eligibility and submission instructions before applying"
+    ],
+    "applicationUrl": "https://www.kznedtea.gov.za/opportunities/vacancies/learning-programmes/"
+  },
+  {
+    "id": "garden-route-district-municipality-bursary-2027",
+    "type": "Bursaries",
+    "title": "External Bursaries - Further Studies 2027",
+    "company": "Garden Route District Municipality",
+    "province": "Western Cape",
+    "field": "Further Education and Training",
+    "experience": "Grade 12 learners and students at accredited institutions",
+    "closingDate": "2026-10-31",
+    "description": "Garden Route District Municipality is offering financial assistance towards further studies during the 2027 academic year. The opportunity is for eligible learners and students attending accredited South African tertiary or TVET institutions whose parents permanently reside within the Garden Route municipal area.",
+    "requirements": [
+      "Applicants must meet the municipality's residence and study requirements",
+      "Submit the completed application form, CV, cover letter and required certified documents",
+      "The official notice specifies additional academic, identity, income and residential documentation"
+    ],
+    "applicationUrl": "https://www.gardenroute.gov.za/2026/09/04/04-september-2026-opportunities-financial-assistance-towards-further-studies-2027/"
+  },
+  {
+    "id": "nsfas-student-funding-2027",
+    "type": "Bursaries",
+    "title": "NSFAS Student Funding Applications 2027",
+    "company": "National Student Financial Aid Scheme",
+    "province": "Nationwide",
+    "field": "University and TVET Study Funding",
+    "experience": "Prospective and eligible continuing students",
+    "closingDate": "2026-11-18",
+    "description": "NSFAS provides financial assistance to eligible students attending public universities and TVET colleges. Students must apply for admission to their chosen institution separately because funding does not guarantee admission.",
+    "requirements": [
+      "Meet the applicable NSFAS eligibility and household financial criteria",
+      "Apply through the official NSFAS application channels",
+      "Check the latest official announcement for the confirmed deadline and required documents"
+    ],
+    "applicationUrl": "https://www.nsfas.org.za/content/how-to-apply.html"
   }
+
 ]
