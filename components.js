@@ -68,13 +68,14 @@ const footerHTML = `
           <a href="category.html?type=Graduate">Graduate Programmes</a>
           <a href="category.html?type=Job">Jobs</a>
           <a href="category.html?type=Training">Training</a>
-          <a href="bursaries.html">Bursaries</a>
+          <a href="category.html?type=Bursary">Bursaries</a>
+          <a href="career-tips.html">Career Tips</a>
         </div>
 
         <div class="footer-links">
           <h3>Career resources</h3>
-          <a href="bursaries.html">Bursaries</a>
-          <a href="training.html">Training</a>
+          <a href="career-tips.html">Career Resources</a>
+          <a href="career-tips.html">Career Advice</a>
           <a href="career-tips.html">CV Writing Advice</a>
           <a href="career-tips.html">Interview Preparation</a>
           <a href="career-tips.html">Avoid Recruitment Scams</a>
