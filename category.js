@@ -30,7 +30,7 @@ const categories = {
       "Discover skills development programmes, apprenticeships, nursing training, vocational courses and other opportunities to gain practical skills and prepare for employment."
   },
 
-  "Bursaries": {
+  "Bursary": {
     title: "Bursaries in South Africa",
     description:
       "Find bursaries, scholarships and study funding opportunities to help South African students pursue their education and achieve their career goals."
