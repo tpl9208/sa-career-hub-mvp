@@ -20,12 +20,13 @@ const headerHTML = `
       >☰</button>
 
       <nav id="navMenu">
-        <a href="index.html#opportunities">All Opportunities</a>
+        <a href="index.html#opportunities">Home</a>
         <a href="category.html?type=Learnership">Learnerships</a>
         <a href="category.html?type=Internship">Internships</a>
         <a href="category.html?type=Graduate">Graduate Programmes</a>
         <a href="category.html?type=Job">Jobs</a>
-        <a href="career-tips.html">Career Tips</a>
+        <a href="category.html?type=Training">Training</a>
+        <a href="bursaries.html">Bursaries</a>
       </nav>
     </div>
   </header>
@@ -61,16 +62,19 @@ const footerHTML = `
 
         <div class="footer-links">
           <h3>Explore opportunities</h3>
-          <a href="index.html#opportunities">All Opportunities</a>
+          <a href="index.html#opportunities">Home</a>
           <a href="category.html?type=Learnership">Learnerships</a>
           <a href="category.html?type=Internship">Internships</a>
           <a href="category.html?type=Graduate">Graduate Programmes</a>
           <a href="category.html?type=Job">Jobs</a>
+          <a href="category.html?type=Training">Training</a>
+          <a href="bursaries.html">Bursaries</a>
         </div>
 
         <div class="footer-links">
           <h3>Career resources</h3>
-          <a href="career-tips.html">Career Tips</a>
+          <a href="bursaries.html">Bursaries</a>
+          <a href="training.html">Training</a>
           <a href="career-tips.html">CV Writing Advice</a>
           <a href="career-tips.html">Interview Preparation</a>
           <a href="career-tips.html">Avoid Recruitment Scams</a>
