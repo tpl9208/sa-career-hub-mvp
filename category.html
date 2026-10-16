@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Explore South African career opportunities on SA Career Hub."
+  >
+
+  <title>Career Opportunities | SA Career Hub</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="category.js" defer></script>
+</head>
+<body>
+
+  <!-- Shared navigation is inserted by components.js -->
+    <div id="site-header"></div>
+
+  <main class="container" style="padding-top: 40px; padding-bottom: 60px;">
+
+    <section>
+      <p><a href="index.html">← Back to Home</a></p>
+
+      <h1 id="categoryTitle">Career Opportunities</h1>
+
+      <p id="categoryDescription">
+        Explore opportunities and find your next step.
+      </p>
+    </section>
+
+    <div class="ad-placeholder" style="margin: 25px 0;">
+      <span>ADVERTISEMENT</span>
+      <p>Advertisement space</p>
+    </div>
+
+    <section id="opportunities">
+      <h2 id="listingHeading">Available opportunities</h2>
+
+      <p id="resultCount">Loading opportunities...</p>
+
+      <div id="opportunityGrid" class="opportunity-grid"></div>
+
+      <div id="noResults" class="hidden">
+        <h3>No opportunities found</h3>
+        <p>Check back later for new listings.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared footer is inserted by components.js -->
+    <div id="site-footer"></div>
+
+<script src="components.js" defer></script>
+<script src="opportunity-utils.js" defer></script>
+<script src="category.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "business-administration-learnership-2026",
+    "type": "Learnership",
+    "title": "2026 Business Administration Learnership",
+    "company": "Example Financial Services",
+    "province": "Gauteng",
+    "field": "Administration",
+    "experience": "No experience",
+    "closingDate": "",
+    "description": "Entry-level opportunity for young South Africans interested in administration and business.",
+    "requirements": [
+      "South African citizen",
+      "Grade 12",
+      "Good communication skills"
+    ],
+    "applicationUrl": "#"
+  },
+  {
+    "id": "it-support-intern-2026",
+    "type": "Internship",
+    "title": "IT Support Intern",
+    "company": "Example Technology",
+    "province": "Western Cape",
+    "field": "IT",
+    "experience": "Entry level",
+    "closingDate": "2026-11-02",
+    "description": "Gain hands-on experience in technical support, systems and troubleshooting.",
+    "requirements": [
+      "Relevant IT qualification",
+      "Basic computer skills",
+      "Good problem-solving skills"
+    ],
+    "applicationUrl": "#"
+  },
+  {
+    "id": "graduate-software-developer-2026",
+    "type": "Graduate",
+    "title": "Graduate Software Developer Programme",
+    "company": "Example Digital",
+    "province": "Gauteng",
+    "field": "IT",
+    "experience": "Graduate",
+    "closingDate": "2026-10-10",
+    "description": "A graduate programme for Computer Science and related graduates.",
+    "requirements": [
+      "Computer Science or related degree",
+      "Programming knowledge",
+      "South African citizen"
+    ],
+    "applicationUrl": "#"
+  },
+  {
+    "id": "junior-customer-service-2026",
+    "type": "Job",
+    "title": "Junior Customer Service Consultant",
+    "company": "Example Retail",
+    "province": "KwaZulu-Natal",
+    "field": "Customer Service",
+    "experience": "Entry level",
+    "closingDate": "2026-11-08",
+    "description": "Entry-level customer service role with training provided.",
+    "requirements": [
+      "Grade 12",
+      "Good communication skills",
+      "Customer-focused attitude"
+    ],
+    "applicationUrl": "#"
+  },
+  {
+    "id": "retail-learnership-2026",
+    "type": "Learnership",
+    "title": "Retail Learnership Programme",
+    "company": "Example Retail Group",
+    "province": "Limpopo",
+    "field": "Retail",
+    "experience": "No experience",
+    "closingDate": "2026-10-07",
+    "description": "Learn retail operations while gaining practical workplace experience.",
+    "requirements": [
+      "Grade 12",
+      "South African citizen",
+      "Interest in retail"
+    ],
+    "applicationUrl": "#"
+  },
+  {
+    "id": "marketing-social-media-intern-2026",
+    "type": "Internship",
+    "title": "Marketing & Social Media Intern",
+    "company": "Example Media",
+    "province": "Remote",
+    "field": "Marketing",
+    "experience": "Entry level",
+    "closingDate": "2026-11-15",
+    "description": "Help create social content and digital campaigns while building your portfolio.",
+    "requirements": [
+      "Marketing or related qualification",
+      "Social media knowledge",
+      "Good written communication"
+    ],
+    "applicationUrl": "#"
+  }
+]
