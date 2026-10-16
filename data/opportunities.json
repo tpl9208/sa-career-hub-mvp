@@ -66,7 +66,7 @@
   },
   {
     "id": "funza-lushaka-bursary-2027",
-    "type": "Bursaries",
+    "type": "Bursary",
     "title": "Funza Lushaka Bursary Programme 2027",
     "company": "Department of Basic Education",
     "province": "Nationwide",
@@ -152,7 +152,7 @@
   },
   {
     "id": "kzn-edtea-engineering-bursary-2026",
-    "type": "Bursaries",
+    "type": "Bursary",
     "title": "Aeronautical, Mechanical and Civil Engineering Bursary",
     "company": "KwaZulu-Natal Department of Economic Development, Tourism and Environmental Affairs",
     "province": "KwaZulu-Natal",
@@ -168,7 +168,7 @@
   },
   {
     "id": "garden-route-district-municipality-bursary-2027",
-    "type": "Bursaries",
+    "type": "Bursary",
     "title": "External Bursaries - Further Studies 2027",
     "company": "Garden Route District Municipality",
     "province": "Western Cape",
@@ -185,7 +185,7 @@
   },
   {
     "id": "nsfas-student-funding-2027",
-    "type": "Bursaries",
+    "type": "Bursary",
     "title": "NSFAS Student Funding Applications 2027",
     "company": "National Student Financial Aid Scheme",
     "province": "Nationwide",
