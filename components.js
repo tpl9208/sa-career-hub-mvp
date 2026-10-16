@@ -26,7 +26,8 @@ const headerHTML = `
         <a href="category.html?type=Graduate">Graduate Programmes</a>
         <a href="category.html?type=Job">Jobs</a>
         <a href="category.html?type=Training">Training</a>
-        <a href="bursaries.html">Bursaries</a>
+        <a href="category.html?type=Bursary">Bursaries</a>
+        <a href="career-tips.html">Career Tips</a>
       </nav>
     </div>
   </header>
