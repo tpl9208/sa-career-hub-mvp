@@ -199,6 +199,58 @@
       "Check the latest official announcement for the confirmed deadline and required documents"
     ],
     "applicationUrl": "https://www.nsfas.org.za/content/how-to-apply.html"
-  }
+  },
+
+  {
+  "id": "dube-tradeport-maintenance-assistant-civil-2026",
+  "type": "Job",
+  "title": "Maintenance Assistant (Civil)",
+  "company": "Dube TradePort",
+  "province": "KwaZulu-Natal",
+  "field": "Civil Maintenance",
+  "experience": "See official vacancy advert",
+  "closingDate": "2026-10-21",
+  "description": "Dube TradePort is advertising a Maintenance Assistant (Civil) position. Interested applicants should review the official vacancy advert for the required qualifications, experience, duties and application instructions. The advertised salary range is R235,400 to R327,200 per year.",
+  "requirements": [
+    "Review the official vacancy advert for the minimum qualifications and experience.",
+    "Prepare the required application documents.",
+    "Submit your application using the official recruitment process before the closing date."
+  ],
+  "applicationUrl": "https://www.eservices.gov.za/eRecruitmentCitizenKZN/Vacancy/ViewVacancyForApplying/4813"
+},
+{
+  "id": "kzn-social-development-finance-clerk-ethekwini-north-2026",
+  "type": "Job",
+  "title": "Finance Clerk: eThekwini North District",
+  "company": "KwaZulu-Natal Department of Social Development",
+  "province": "KwaZulu-Natal",
+  "field": "Finance and Accounting",
+  "experience": "See official vacancy advert",
+  "closingDate": "2026-10-23",
+  "description": "The KwaZulu-Natal Department of Social Development is advertising a Finance Clerk position in the eThekwini North District. Applicants should consult the official vacancy details for the required qualifications, duties, experience and application procedure. The advertised salary is R237,453 per annum.",
+  "requirements": [
+    "Check the official vacancy advert for the required finance or accounting qualifications.",
+    "Prepare the application documents specified in the advert.",
+    "Follow the official departmental application instructions."
+  ],
+  "applicationUrl": "https://www.eservices.gov.za/eRecruitmentCitizenKZN/Vacancy/ViewVacancyForApplying/4805"
+},
+{
+  "id": "kzn-social-development-staff-nurse-kwabadala-2026",
+  "type": "Job",
+  "title": "Staff Nurse: Kwabadala Centre for the Residential Care of Old Persons",
+  "company": "KwaZulu-Natal Department of Social Development",
+  "province": "KwaZulu-Natal",
+  "field": "Nursing and Healthcare",
+  "experience": "See official vacancy advert",
+  "closingDate": "2026-10-23",
+  "description": "The KwaZulu-Natal Department of Social Development is advertising a Staff Nurse position at the Kwabadala Centre for the Residential Care of Old Persons. Applicants should check the official vacancy advert for nursing registration, qualifications, experience and other requirements. The advertised salary is R229,440 per annum.",
+  "requirements": [
+    "Review the official vacancy advert for nursing qualifications and professional registration requirements.",
+    "Prepare the required supporting documents.",
+    "Apply through the official recruitment portal before the closing date."
+  ],
+  "applicationUrl": "https://www.eservices.gov.za/eRecruitmentCitizenKZN/Vacancy/ViewVacancyForApplying/4814"
+}
 
 ]
