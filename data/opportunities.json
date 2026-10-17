@@ -317,6 +317,48 @@
     "Willingness to complete a 12-month contract"
   ],
   "applicationUrl": "https://forms.cloud.microsoft/r/tKW94ibBVF"
+},
+{
+  "id": "fasset-outstanding-study-debt-assistance-grant-2026",
+  "type": "Bursary",
+  "title": "Outstanding Study Debt Assistance Grant 2026",
+  "company": "Finance and Accounting Services Sector Education and Training Authority (FASSET)",
+  "province": "Nationwide",
+  "field": "Finance, Accounting and Financial Services",
+  "experience": "Completed qualification; historical study debt outstanding",
+  "closingDate": "2026-11-30",
+  "description": "FASSET's Outstanding Study Debt Assistance Grant supports eligible South African graduates who have completed a Finance and Accounting Services-related qualification but cannot obtain their qualification certificate or academic records because of outstanding historical study debt. Approved funding is paid directly to the relevant institution to settle eligible debt. Applicants should confirm the current funding window, eligibility rules and application process with FASSET before applying.",
+  "requirements": [
+    "Must be a South African citizen.",
+    "Must have completed a qualification related to the Finance and Accounting Services sector.",
+    "Must have outstanding historical study debt preventing access to the qualification certificate or academic records.",
+    "Must not currently be registered for further study, according to the published programme criteria.",
+    "Prepare a certified copy of your South African ID.",
+    "Provide proof of the completed qualification.",
+    "Provide an official statement showing the outstanding debt from the institution.",
+    "Confirm the current application requirements and funding availability with FASSET."
+  ],
+  "applicationUrl": "https://www.fasset.org.za/"
+},
+{
+  "id": "digify-pro-online-foundation-digital-skills-2026",
+  "type": "Training",
+  "title": "Digify PRO Online Foundation Phase — Free Digital Skills Training",
+  "company": "Digify Africa",
+  "province": "Nationwide",
+  "field": "Digital Marketing, Artificial Intelligence and Cybersecurity",
+  "experience": "Beginner; no prior digital marketing experience required",
+  "closingDate": "",
+  "description": "Digify Africa offers the free Digify PRO Online Foundation Phase to help beginners develop practical digital skills. The self-paced programme introduces digital marketing fundamentals, artificial intelligence basics, cybersecurity, digital literacy and career readiness. Learners can study using a laptop, tablet or cellphone and progress at their own pace. Successful participants can use the foundation phase as a gateway to further Digify PRO training, subject to programme requirements.",
+  "requirements": [
+    "Open to applicants across African countries.",
+    "Suitable for beginners with no prior digital marketing knowledge.",
+    "No formal post-matric training is required for the foundation phase.",
+    "Access to a suitable internet-connected device is recommended.",
+    "Complete the official online application and follow the enrolment instructions.",
+    "The foundation phase is free of charge."
+  ],
+  "applicationUrl": "https://digifyafrica.com/digify-pro-online-applications/"
 }
 
 ]
