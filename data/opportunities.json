@@ -251,6 +251,70 @@
     "Apply through the official recruitment portal before the closing date."
   ],
   "applicationUrl": "https://www.eservices.gov.za/eRecruitmentCitizenKZN/Vacancy/ViewVacancyForApplying/4814"
+},
+{
+  "id": "capitec-bank-better-champion-learner-2026",
+  "type": "Learnership",
+  "title": "Bank Better Champion Learner (Pipeline)",
+  "company": "Capitec Bank",
+  "province": "National",
+  "field": "Banking and Financial Services",
+  "experience": "No experience required",
+  "closingDate": "See Capitec Careers Website",
+  "description": "Capitec Bank is recruiting energetic and self-motivated individuals for its Bank Better Champion Learner Pipeline opportunity. The programme provides exposure to client service, branch operations and banking environments. Applicants must have a Grade 12 National Certificate and a passion for customer service.",
+  "requirements": [
+    "Grade 12 National Certificate",
+    "Basic calculations skills",
+    "Good communication and interpersonal skills",
+    "Computer literacy (MS Word, MS Excel and MS Outlook)",
+    "Ambitious and willing to learn",
+    "Client service experience is advantageous but not required"
+  ],
+  "applicationUrl": "https://careers.capitecbank.co.za/"
+},
+{
+  "id": "tourism-culinary-skills-programme-2026-2027",
+  "type": "Skills Programme",
+  "title": "2026/2027 Culinary Skills Programme - Food and Beverage Services and Professional Cookery",
+  "company": "Department of Tourism",
+  "province": "Multiple Provinces",
+  "field": "Hospitality and Tourism",
+  "experience": "No experience required",
+  "closingDate": "2026-10-18",
+  "description": "The Department of Tourism invites unemployed youth with Matric to apply for a 12-month Culinary Skills Programme focusing on Food and Beverage Services and Professional Cookery. Successful participants will receive a daily stipend of R200 and gain skills aimed at improving employment opportunities in the hospitality and tourism sector.",
+  "requirements": [
+    "South African youth aged 18 to 35 years",
+    "Matric certificate",
+    "Fluency in English",
+    "Curriculum Vitae (CV)",
+    "Certified copy of ID",
+    "Proof of residence",
+    "Must be willing to work flexible hours, including weekends and public holidays",
+    "Passion for tourism and hospitality",
+    "Previous beneficiaries of Department of Tourism learnerships or skills programmes are not eligible"
+  ],
+  "applicationUrl": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=si-I5XdeLUiYqdO01DHDsr35hNrayARKmsE0-zcJgWdUMk05STJJUko4VkhDTTY2NE82SlFaMEw1TC4u"
+},
+{
+  "id": "mpumalanga-basic-traffic-officer-learnership-2026",
+  "type": "Learnership",
+  "title": "Basic Traffic Officers Diploma Learnership Programme 2026/27",
+  "company": "Mpumalanga Department of Community Safety, Security and Liaison",
+  "province": "Mpumalanga",
+  "field": "Traffic Law Enforcement",
+  "experience": "No experience required",
+  "closingDate": "2026-10-30",
+  "description": "The Mpumalanga Department of Community Safety, Security and Liaison invites applications for the Basic Traffic Officers Diploma Learnership Programme. The programme runs for 12 months and is conducted at the Mpumalanga Traffic Training College in Mkhuhlu. Successful learners will receive a stipend of R5,000 per month and obtain an NQF Level 4 Diploma in Basic Traffic Officer upon successful completion.",
+  "requirements": [
+    "Grade 12 certificate",
+    "Code B driving licence",
+    "South African citizen",
+    "No criminal record",
+    "Must be medically fit",
+    "Must pass driving and competency tests",
+    "Willingness to complete a 12-month contract"
+  ],
+  "applicationUrl": "https://forms.cloud.microsoft/r/tKW94ibBVF"
 }
 
 ]
