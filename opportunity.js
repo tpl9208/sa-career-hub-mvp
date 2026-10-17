@@ -72,7 +72,8 @@ async function loadOpportunityDetails() {
         "'": "&#39;"
       })[character]);
 
-    const applicationUrl = opportunity.applicationUrl || "";
+    // Accept only web URLs for portals, or validated addresses for email applications.
+    const applicationUrl = String(opportunity.applicationUrl || "").trim();
 
     const validApplicationUrl = (() => {
       try {
@@ -84,6 +85,28 @@ async function loadOpportunityDetails() {
         return "";
       }
     })();
+
+    const applicationEmail = String(opportunity.applicationEmail || "").trim();
+    const validApplicationEmail =
+      /^[a-z0-9.!$%&'*+/=_`{|}~-]+@[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$/i
+        .test(applicationEmail)
+        ? applicationEmail
+        : "";
+
+    // Prefer an application portal when both destinations are supplied.
+    const applicationAction = validApplicationUrl
+      ? `<a class="apply-btn"
+           href="${safeText(validApplicationUrl)}"
+           target="_blank"
+           rel="noopener noreferrer">
+           Apply on Employer Website →
+         </a>`
+      : validApplicationEmail
+        ? `<a class="apply-btn" href="mailto:${safeText(validApplicationEmail)}">
+             Apply by Email →
+           </a>
+           <p>Application email: <a href="mailto:${safeText(validApplicationEmail)}">${safeText(validApplicationEmail)}</a></p>`
+        : `<p>Official application instructions have not been added yet.</p>`;
 
     container.innerHTML = `
   <div class="card-badges">
@@ -156,16 +179,7 @@ async function loadOpportunityDetails() {
             : "<p>Check the employer's official advert for requirements.</p>"
         }
 
-        ${
-          validApplicationUrl
-            ? `<a class="apply-btn"
-                 href="${safeText(validApplicationUrl)}"
-                 target="_blank"
-                 rel="noopener noreferrer">
-                 Apply on Employer Website →
-               </a>`
-            : `<p>Official application link has not been added yet.</p>`
-        }
+        ${applicationAction}
       </div>
     `;
 

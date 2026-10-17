@@ -1,4 +1,5 @@
 
+// Category metadata is keyed by the exact `type` values stored in the JSON.
 const categories = {
   "Learnership": {
     title: "Learnerships in South Africa",
@@ -73,14 +74,18 @@ async function loadCategory() {
 
     const opportunities = await response.json();
 
+    // Keep category listings consistent with the homepage expiry rules.
     const filtered = opportunities.filter(
-      opportunity => opportunity.type === selectedType
+      opportunity =>
+        opportunity.type === selectedType &&
+        shouldShowOpportunity(opportunity)
     );
 
     count.textContent =
       `${filtered.length} opportunit${filtered.length === 1 ? "y" : "ies"} found`;
 
     
+    // Convert each matching record into a card linking to its details page.
     grid.innerHTML = filtered.map(opportunity => {
     // Determine the opportunity's closing status.
     const status = getOpportunityStatus(opportunity.closingDate);

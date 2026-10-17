@@ -29,7 +29,8 @@ The website is built with HTML, CSS, vanilla JavaScript and JSON. It is hosted o
 16. Deployment with GitHub and Cloudflare Pages
 17. Updating Opportunities
 18. Troubleshooting
-19. Future Improvements
+19. Debugging by Symptom
+20. Future Improvements
 
 ---
 
@@ -96,67 +97,48 @@ This tree describes the main files used by the project. Additional files or fold
 
 | File | Responsibility |
 |---|---|
-| `index.html` | Homepage, search interface, filters and opportunity grid |
-| `category.html` | Displays opportunities belonging to a selected category |
-| `opportunity.html` | Provides the layout for one opportunity's details |
-| `career-tips.html` | Contains career guidance articles |
-| `style.css` | Shared styles and responsive layouts |
-| `components.js` | Shared website components, including navigation and footer |
-| `script.js` | Homepage opportunity loading, search, filtering and rendering |
-| `category.js` | Category-specific opportunity filtering and display |
-| `opportunity.js` | Loads and displays an individual opportunity |
-| `opportunity-utils.js` | Shared opportunity-related helper functions, including closing-date status |
-| `data/opportunities.json` | Structured listings used by the JavaScript files |
-| `favicon.svg` | Website tab icon |
-| `robots.txt` | Provides crawling instructions to search engines |
-| `sitemap.xml` | Lists important website URLs for search engines |
-| `README.md` | Project documentation |
+| `index.html` | Homepage markup, search/filter controls and opportunity-grid placeholders |
+| `category.html` | Shared layout for a selected opportunity type |
+| `opportunity.html` | Shared layout for one opportunity's details |
+| `career-tips.html` | Static career guidance articles |
+| `style.css` | Styles shared by all pages, including cards and responsive layouts |
+| `components.js` | Inserts the shared header/footer and handles the mobile navigation toggle |
+| `script.js` | Loads homepage listings, searches, filters, renders cards and handles category-card clicks |
+| `category.js` | Reads the category query parameter and renders matching active listings |
+| `opportunity.js` | Reads an opportunity ID and renders its details and application destination |
+| `opportunity-utils.js` | Shared closing-date calculations and listing-expiry rules |
+| `data/opportunities.json` | JSON records read by the homepage, category page and details page |
+| `favicon.svg` | Browser tab icon |
+| `robots.txt` | Crawler instructions |
+| `sitemap.xml` | URLs submitted for search-engine discovery |
+| `README.md` | Project and debugging guide |
 
 ## 4. How the Website Works
 
-The website follows a data-driven approach.
-
-Instead of creating a separate HTML page for every job or learnership, the project stores listings in `data/opportunities.json`. JavaScript reads the data and generates the relevant content.
-
-The general process is:
-
-1. A visitor opens a page.
-2. The browser reads the HTML.
-3. The browser loads the shared CSS stylesheet.
-4. The browser loads the JavaScript files referenced by that page.
-5. JavaScript retrieves the opportunity JSON when required.
-6. The code processes the records and renders the relevant content.
-7. The visitor can search, filter, browse categories or open an individual opportunity.
-8. Shared components provide consistent navigation and footer content across pages.
-
-The relationship can be represented as:
+The site is static and data-driven: the opportunity records live in
+`data/opportunities.json`; the page-specific JavaScript fetches that file and
+builds HTML inside containers declared in the page markup. There is no
+application server or database in this project.
 
 ```text
-                 index.html
-                      |
-                      v
-                  script.js
-                      |
-                      v
-            opportunities.json
-                      |
-                      v
-             Search and filters
-                      |
-                      v
-              Opportunity cards
-                      |
-                      v
-                category.html
-                      |
-                      v
-               opportunity.html
+index.html ── script.js ──┐
+category.html ─ category.js ─┼── fetch data/opportunities.json
+opportunity.html ─ opportunity.js ─┘
+              │
+              ├── opportunity-utils.js (date status and expiry rules)
+              ├── components.js (shared header, footer, mobile menu)
+              └── style.css (presentation for all pages)
 
-Shared across applicable pages:
-components.js + style.css
+Homepage/category card ── opportunity.html?id=<record id>
+Navigation category link ── category.html?type=<record type>
+Career guidance page ── career-tips.html (HTML content; no listing fetch)
 ```
 
-The diagram shows the main responsibilities and navigation relationships. The pages do not all need to execute the same JavaScript files; each page loads the scripts required for its functionality.
+Each HTML page owns the containers and controls that its JavaScript expects.
+Changing an element ID therefore often requires changing the matching JavaScript
+selector too. Script tags use `defer`; preserve their order where one script
+provides functions used by another. The category page loads each local script
+once, in dependency order.
 
 ## 5. HTML Pages
 
@@ -172,8 +154,11 @@ Important page elements include:
 - `#opportunities` — main opportunities section.
 - `#opportunityGrid` — container populated with opportunity cards.
 - `#site-footer` — location where the shared footer is inserted.
+- `#searchInput`, `#typeFilter`, `#provinceFilter` — controls read by `script.js`.
+- `#resultCount`, `#noResults` — status and empty-state elements updated by `script.js`.
 
-The page loads `components.js`, `opportunity-utils.js` and `script.js`.
+The page loads `components.js`, `opportunity-utils.js` and `script.js`, in that
+order. AdSense markup and category shortcut buttons are also part of the page.
 
 ### `category.html` — Category Listings
 
@@ -199,6 +184,10 @@ Important elements include:
 - `#opportunityGrid` — filtered opportunity cards.
 - `#noResults` — message displayed when no matching opportunities are available.
 
+The page loads `components.js`, `opportunity-utils.js` and `category.js`, in that
+order. `category.js` reads `?type=...`, fetches the JSON, excludes expired
+records, and fills the page elements above.
+
 ### `opportunity.html` — Opportunity Details
 
 This page provides a reusable layout for individual listings.
@@ -211,9 +200,15 @@ opportunity.html?id=business-administration-learnership-2026
 
 The `opportunity.js` file reads the ID, retrieves the opportunity data and displays the matching record.
 
-The page can show the title, employer, category, location, field, experience requirements, closing date, description, requirements and official application link.
+The page can show the title, employer, category, location, field, experience,
+closing date, description, requirements and application destination. The
+destination can be an HTTP(S) URL (`applicationUrl`) or an email
+(`applicationEmail`).
 
-It also includes a reminder encouraging visitors to verify opportunities through the employer's official website.
+The page loads `components.js`, `opportunity-utils.js` and `opportunity.js`, in
+that order. `opportunity.js` reads `?id=...`, finds the matching record and
+renders it inside `#opportunityDetails`. It also includes a reminder to verify
+the opportunity and instructions with the employer.
 
 ### `career-tips.html` — Career Advice
 
@@ -228,7 +223,9 @@ It provides guidance on:
 - Applying for graduate programmes.
 - Avoiding recruitment scams.
 
-The page uses HTML for its article content, `style.css` for presentation and `components.js` for the shared navigation and footer.
+The page uses HTML for its article content, `style.css` for presentation and
+`components.js` for the shared navigation and footer. It does not fetch
+opportunity data.
 
 ## 6. JavaScript Architecture
 
@@ -257,12 +254,18 @@ Its responsibilities include loading opportunity records, rendering cards and ha
 
 The general workflow is:
 
-1. Request `data/opportunities.json`.
-2. Read the returned opportunity records.
-3. Apply the visitor's search and filter selections.
-4. Generate the matching opportunity cards.
-5. Display the cards in `#opportunityGrid`.
-6. Update the interface when the visitor changes the search or filters.
+1. Request `data/opportunities.json` and keep the returned array in memory.
+2. Hide opportunities more than seven days past a valid closing date.
+3. Apply the current text search, type and province filters.
+4. Generate cards in `#opportunityGrid`, linking each to
+   `opportunity.html?id=<id>`.
+5. Update `#resultCount` and `#noResults`.
+6. Re-run the filtering/rendering step when the visitor changes a control.
+
+Homepage text search checks title, employer, province, field, type, experience,
+description and requirements. The category shortcut cards navigate to
+`category.html?type=<type>`; the shared navigation links use the same query
+parameter format.
 
 The homepage's HTML defines the containers and controls, while `script.js` supplies the dynamic behaviour.
 
@@ -270,7 +273,9 @@ The homepage's HTML defines the containers and controls, while `script.js` suppl
 
 This file controls the category listing page.
 
-It uses the category selected in the URL to determine which records match the requested category. It then updates the category heading and description and displays the matching opportunities.
+It uses the category selected in the URL to determine which non-expired records
+match the requested category. It then updates the category heading and
+description and displays the matching opportunities.
 
 It also works with the result count and no-results message.
 
@@ -287,7 +292,7 @@ Its main responsibilities are to:
 - Find the matching opportunity.
 - Format relevant information for display.
 - Render the opportunity description and requirements.
-- Display the application link when it passes the expected URL validation.
+- Display a validated web application link or email application destination.
 - Set a relevant document title for the selected opportunity.
 - Show an appropriate message when the record cannot be found or loaded.
 
@@ -295,14 +300,11 @@ Its main responsibilities are to:
 
 This file contains shared opportunity-related helper logic.
 
-One important responsibility is determining closing-date status. The status values used by the project include:
-
-- `open`
-- `closing-passed`
-- `expired`
-- `unknown`
-
-The interface can use these statuses to display an open, closed or date-checking indicator.
+One important responsibility is determining closing-date status. The possible
+statuses are `open`, `closing-passed`, `expired`, `date-not-specified` and
+`unknown`. The homepage and category page omit `expired` records. A details URL
+is still looked up by ID and can display a record directly even if it is past
+that listing window.
 
 Keeping shared logic in a utility file avoids duplicating the same date-related rules in multiple scripts.
 
@@ -335,11 +337,14 @@ A record follows this general structure:
     "Meet the advertised eligibility requirements",
     "Submit the required supporting documents"
   ],
-  "applicationUrl": "https://example.com/apply"
+  "applicationEmail": "applications@example.com"
 }
 ```
 
 This is an illustrative example, not a claim that the example vacancy exists.
+Use `applicationUrl` for an official website or application portal, or
+`applicationEmail` when the advert asks applicants to email their application.
+If both fields are present, the website application link is shown first.
 
 ### Field descriptions
 
@@ -355,11 +360,24 @@ This is an illustrative example, not a claim that the example vacancy exists.
 | `closingDate` | Closing date in `YYYY-MM-DD` format |
 | `description` | Opportunity description |
 | `requirements` | Array of requirements |
-| `applicationUrl` | Official application destination |
+| `applicationUrl` | Optional official website or application portal URL |
+| `applicationEmail` | Optional application email address used to create a `mailto:` link |
+
+The JSON is not validated against a formal schema at runtime. Keep each record
+consistent with the example; `requirements` should be an array. Some display
+fields have fallbacks, but missing IDs, incorrect types or malformed JSON can
+still break links or page rendering.
+
+For the expiry calculation, use a real calendar date in `YYYY-MM-DD` format.
+An empty or non-date value is treated as an unspecified/unknown date and will
+not cause a record to expire automatically. Do not store instructions such as
+“see website” in `closingDate`; put that guidance in the description or
+requirements instead.
 
 ### Important category values
 
-The `type` field is used by the filtering logic. Values must match the values expected by the website.
+The `type` field is used by the homepage filters, category query parameter and
+navigation links. Values must match exactly across the JSON and interface.
 
 Examples include:
 
@@ -384,7 +402,7 @@ To add a new listing:
 4. Use a supported category value.
 5. Include the required fields.
 6. Use a valid date format.
-7. Check that the application URL is correct and trustworthy.
+7. Check that the application URL or email address is correct and trustworthy.
 8. Validate the JSON syntax.
 9. Save, commit and push the change to GitHub.
 
@@ -470,15 +488,19 @@ Opportunity cards link to the details page using the record's unique ID.
 
 This means the project can reuse one details template for many opportunities instead of creating a separate HTML file for each vacancy.
 
-Closing-date logic helps visitors understand whether an opportunity appears to be open or whether its deadline has passed.
-
-Dates should be stored consistently in ISO-style `YYYY-MM-DD` format. Date comparisons should be handled consistently to avoid timezone-related off-by-one errors.
+Closing-date logic in `opportunity-utils.js` determines the status from the
+visitor's local calendar date. An opportunity remains visible through its
+closing date, remains in homepage/category listings for seven days after that,
+then is omitted from those listings. The details page can still find it by ID.
+Missing or invalid dates are treated as unspecified/unknown and are not
+automatically expired.
 
 A displayed status is a guide based on the stored information. Visitors should still verify that a vacancy remains available on the employer's official website.
 
 ## 12. Google AdSense Integration
 
-Google AdSense is being integrated to support potential website revenue.
+Google AdSense ad units are included on the site. Ad serving depends on the
+AdSense account and site status, ad availability and other factors.
 
 The publisher ID used by the project is:
 
@@ -504,9 +526,9 @@ Manual ad placements use an ad unit containing an element similar to:
 
 `YOUR_AD_SLOT_ID` is a placeholder. Each ad unit must use its own actual numeric slot ID supplied by Google AdSense.
 
-### Planned ad placement structure
+### Current ad placement structure
 
-| Page | Planned placements |
+| Page | Placements |
 |---|---:|
 | Homepage | 2 |
 | Category page | 2 |
@@ -514,7 +536,9 @@ Manual ad placements use an ad unit containing an element similar to:
 | Career tips | 3 |
 | **Total** | **9** |
 
-The loader script should not be duplicated inside every ad slot. Each slot needs its own correct configuration and initialization.
+Each page loads the AdSense library in its `<head>`. Each ad unit has its own
+slot ID and inline initialization. When changing ads, keep the publisher ID
+consistent and use the slot ID supplied for that ad unit.
 
 Ad code should be positioned so it does not mislead visitors, resemble application controls or encourage accidental clicks.
 
@@ -560,11 +584,15 @@ The project's opportunity rendering logic uses HTML-escaping techniques when con
 
 Where practical, use safe DOM APIs such as `textContent` for plain text.
 
-### Application URLs
+### Application destinations
 
-Application links should point to the intended employer or a legitimate application platform.
+Application destinations should point to the intended employer or a legitimate
+application platform. The details-page logic allows only HTTP(S) URLs for
+`applicationUrl`; `applicationEmail` is validated before it is placed in a
+`mailto:` link. If both values are present, the website URL is preferred.
 
-The details-page logic validates application URLs against the expected HTTP or HTTPS protocols. Continue validating URLs before rendering clickable links.
+Text values are HTML-escaped before insertion into generated card/detail markup.
+Keep escaping and destination validation in place when changing rendering.
 
 ### Data accuracy
 
@@ -582,9 +610,11 @@ For local testing:
 2. Confirm that the main HTML, JavaScript, CSS and JSON files are present.
 3. Use a local development server, such as the Live Server extension, to serve the project.
 4. Open the local homepage in a browser.
-5. Test navigation, search, category filters and opportunity details.
+5. Test search/type/province filters, category links, details links and an
+   email-based application record.
 6. Inspect the browser developer console for JavaScript errors.
-7. Check the browser Network panel if JSON files or other resources fail to load.
+7. Check the browser Network panel for failed `data/opportunities.json`,
+   script, stylesheet or image requests.
 
 Serving the project over a local HTTP server is preferable to opening the HTML file directly with a `file://` URL, because browser security restrictions can interfere with `fetch()` requests for JSON.
 
@@ -678,7 +708,47 @@ Check that the correct AdSense loader, publisher ID, slot ID and initialization 
 
 Confirm that the changes were committed and pushed, that Cloudflare Pages completed the deployment, and that the browser is loading the latest version.
 
-## 19. Future Improvements
+## 19. Debugging by Symptom
+
+Start with the browser Developer Tools:
+
+1. **Console:** find the first JavaScript error; later errors may be consequences.
+2. **Network:** reload and check that the page's scripts, `style.css` and
+   `data/opportunities.json` load successfully.
+3. **Elements:** confirm the expected IDs exist and that the generated markup
+   appears in the intended container.
+4. **Sources:** confirm the browser is using the current local/deployed file,
+   not a cached or stale copy.
+
+Use this map to locate the code that owns a behavior:
+
+| Symptom or change | Start here | Also check |
+|---|---|---|
+| Homepage opportunity list is empty | `script.js` and `index.html` | JSON request, `#opportunityGrid`, `#searchInput`, filter IDs, `opportunity-utils.js` |
+| Search/filter result is wrong | `script.js` | `index.html` control values and `type`/`province` in JSON |
+| Category heading or cards are wrong | `category.js` and `category.html` | URL `?type=...`, `categories` keys, JSON `type`, `shouldShowOpportunity()` |
+| Details page cannot find a listing | `opportunity.js` and `opportunity.html` | URL `?id=...` and matching JSON `id` |
+| Apply button or email is missing | `opportunity.js` | `applicationUrl`/`applicationEmail` data and destination validation |
+| Header, footer or mobile menu is missing | `components.js` | Page has `#site-header`/`#site-footer`; script is loaded |
+| Page looks unstyled or broken on mobile | `style.css` and the relevant HTML | Stylesheet request, class names, media queries and viewport size |
+| One page behaves differently from another | The relevant HTML file | Script includes, script order, element IDs and page-specific code |
+
+The opportunity data fetch uses the relative path
+`data/opportunities.json`. Run a local server from the repository root (for
+example, with VS Code Live Server) so that this path resolves as expected.
+Opening an HTML file directly with `file://` may prevent the browser from
+fetching the JSON.
+
+When a listing does not render, verify in this order:
+
+1. The JSON file parses and the record is inside the top-level array.
+2. Its `id` is unique and its `type` exactly matches the expected value.
+3. Its date is either a real `YYYY-MM-DD` date or intentionally blank.
+4. The record has not passed the seven-day listing grace period.
+5. The page URL parameter and matching HTML container are correct.
+6. The Network and Console panels show no failed request or script error.
+
+## 20. Future Improvements
 
 Possible future enhancements include:
 

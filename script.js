@@ -22,6 +22,7 @@ const provinceFilter = document.getElementById("provinceFilter");
 const count = document.getElementById("resultCount");
 const noResults = document.getElementById("noResults");
 
+// Apply the current search and filter controls, then rebuild the card grid.
 function render() {
   const term = search.value.toLowerCase().trim();
   const type = typeFilter.value;
@@ -121,6 +122,7 @@ grid.innerHTML = filtered.map(o => {
 
 async function loadOpportunities() {
   try {
+    // Fetch once on page load; later input changes only re-filter this array.
     const response = await fetch("data/opportunities.json");
 
     if (!response.ok) {

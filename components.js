@@ -1,4 +1,5 @@
 
+// Shared page chrome is inserted into the matching placeholders on each page.
 const headerHTML = `
   <header class="site-header">
     <div class="container nav">
@@ -133,4 +134,3 @@ if (menuBtn && navMenu) {
     );
   });
 }
-
