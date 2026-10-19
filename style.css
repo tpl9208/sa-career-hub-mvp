@@ -490,8 +490,8 @@ footer .logo{color:#fff}footer p{margin-top:8px}
 
 .footer-main {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 32px;
   padding-bottom: 40px;
 }
 
@@ -597,6 +597,57 @@ footer .logo{color:#fff}footer p{margin-top:8px}
 
 .footer-bottom a:hover {
   color: #ffffff;
+}
+
+.footer-bottom-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.content-page {
+  max-width: 850px;
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+
+.content-page h1 {
+  margin-bottom: 22px;
+  font-size: clamp(2.1rem, 5vw, 3.25rem);
+}
+
+.content-page h2 {
+  margin: 32px 0 12px;
+  font-size: 1.45rem;
+}
+
+.content-page p,
+.content-page li {
+  color: #475569;
+  line-height: 1.8;
+}
+
+.content-page p + p {
+  margin-top: 14px;
+}
+
+.content-page ul {
+  padding-left: 24px;
+}
+
+.content-page li + li {
+  margin-top: 9px;
+}
+
+.content-page a {
+  color: #2563a6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.content-page a:focus-visible {
+  outline: 3px solid #14b8a6;
+  outline-offset: 3px;
 }
 
 /* Responsive footer layout */
@@ -786,4 +837,3 @@ footer .logo{color:#fff}footer p{margin-top:8px}
     text-align: center;
   }
 }
-

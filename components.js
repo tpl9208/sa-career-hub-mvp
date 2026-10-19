@@ -4,7 +4,7 @@ const headerHTML = `
   <header class="site-header">
     <div class="container nav">
       
-<a class="logo" href="index.html">
+<a class="logo" href="/">
   <svg class="logo-icon" viewBox="0 0 64 64" aria-hidden="true">
     <circle cx="32" cy="10" r="7" fill="#14B8A6" />
     <path d="M27 22 C16 19 7 30 9 43 C11 51 19 55 27 57 L31 34 Z" fill="#14B8A6" />
@@ -21,14 +21,14 @@ const headerHTML = `
       >☰</button>
 
       <nav id="navMenu">
-        <a href="index.html#opportunities">Home</a>
-        <a href="category.html?type=Learnership">Learnerships</a>
-        <a href="category.html?type=Internship">Internships</a>
-        <a href="category.html?type=Graduate">Graduate Programmes</a>
-        <a href="category.html?type=Job">Jobs</a>
-        <a href="category.html?type=Training">Training</a>
-        <a href="category.html?type=Bursary">Bursaries</a>
-        <a href="career-tips.html">Career Tips</a>
+        <a href="/#opportunities">Home</a>
+        <a href="/category.html?type=Learnership">Learnerships</a>
+        <a href="/category.html?type=Internship">Internships</a>
+        <a href="/category.html?type=Graduate">Graduate Programmes</a>
+        <a href="/category.html?type=Job">Jobs</a>
+        <a href="/category.html?type=Training">Training</a>
+        <a href="/category.html?type=Bursary">Bursaries</a>
+        <a href="/career-tips.html">Career Tips</a>
       </nav>
     </div>
   </header>
@@ -42,7 +42,7 @@ const footerHTML = `
       <div class="footer-main">
 
         <div class="footer-brand">
-            <a class="footer-logo" href="index.html">
+            <a class="footer-logo" href="/">
             <svg class="logo-icon" viewBox="0 0 64 64" aria-hidden="true">
                 <circle cx="32" cy="10" r="7" fill="#2DD4BF" />
                 <path d="M27 22 C16 19 7 30 9 43 C11 51 19 55 27 57 L31 34 Z" fill="#2DD4BF" />
@@ -64,23 +64,31 @@ const footerHTML = `
 
         <div class="footer-links">
           <h3>Explore opportunities</h3>
-          <a href="index.html#opportunities">Home</a>
-          <a href="category.html?type=Learnership">Learnerships</a>
-          <a href="category.html?type=Internship">Internships</a>
-          <a href="category.html?type=Graduate">Graduate Programmes</a>
-          <a href="category.html?type=Job">Jobs</a>
-          <a href="category.html?type=Training">Training</a>
-          <a href="category.html?type=Bursary">Bursaries</a>
-          <a href="career-tips.html">Career Tips</a>
+          <a href="/#opportunities">Home</a>
+          <a href="/category.html?type=Learnership">Learnerships</a>
+          <a href="/category.html?type=Internship">Internships</a>
+          <a href="/category.html?type=Graduate">Graduate Programmes</a>
+          <a href="/category.html?type=Job">Jobs</a>
+          <a href="/category.html?type=Training">Training</a>
+          <a href="/category.html?type=Bursary">Bursaries</a>
+          <a href="/career-tips.html">Career Tips</a>
         </div>
 
         <div class="footer-links">
           <h3>Career resources</h3>
-          <a href="career-tips.html">Career Resources</a>
-          <a href="career-tips.html">Career Advice</a>
-          <a href="career-tips.html">CV Writing Advice</a>
-          <a href="career-tips.html">Interview Preparation</a>
-          <a href="career-tips.html">Avoid Recruitment Scams</a>
+          <a href="/career-tips.html">Career Resources</a>
+          <a href="/career-tips.html">Career Advice</a>
+          <a href="/career-tips.html">CV Writing Advice</a>
+          <a href="/career-tips.html">Interview Preparation</a>
+          <a href="/career-tips.html">Avoid Recruitment Scams</a>
+        </div>
+
+        <div class="footer-links">
+          <h3>About this site</h3>
+          <a href="about.html">About SA Career Hub</a>
+          <a href="editorial-policy.html">Editorial policy</a>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="contact.html">Contact and corrections</a>
         </div>
 
       </div>
@@ -98,7 +106,10 @@ const footerHTML = `
           © 2026 SA Career Hub. All rights reserved.
         </p>
 
-        <a href="index.html">Back to home ↑</a>
+        <div class="footer-bottom-links">
+          <a href="contact.html">Contact</a>
+          <a href="/">Back to home ↑</a>
+        </div>
       </div>
 
     </div>

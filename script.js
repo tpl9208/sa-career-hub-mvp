@@ -123,7 +123,7 @@ grid.innerHTML = filtered.map(o => {
 async function loadOpportunities() {
   try {
     // Fetch once on page load; later input changes only re-filter this array.
-    const response = await fetch("data/opportunities.json");
+    const response = await fetch("/data/opportunities.json");
 
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);

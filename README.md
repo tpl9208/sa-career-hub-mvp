@@ -83,8 +83,13 @@ sa-career-hub-mvp/
 ├── opportunity-utils.js
 │
 ├── favicon.svg
+├── ads.txt
 ├── robots.txt
 ├── sitemap.xml
+├── about.html
+├── contact.html
+├── editorial-policy.html
+├── privacy.html
 ├── README.md
 │
 └── data/
@@ -109,8 +114,13 @@ This tree describes the main files used by the project. Additional files or fold
 | `opportunity-utils.js` | Shared closing-date calculations and listing-expiry rules |
 | `data/opportunities.json` | JSON records read by the homepage, category page and details page |
 | `favicon.svg` | Browser tab icon |
+| `ads.txt` | Authorized digital advertising seller declaration |
 | `robots.txt` | Crawler instructions |
 | `sitemap.xml` | URLs submitted for search-engine discovery |
+| `about.html` | Site purpose and independence information |
+| `contact.html` | Public correction and feedback channel |
+| `editorial-policy.html` | Listing verification and corrections process |
+| `privacy.html` | Advertising, hosting and external-link privacy summary |
 | `README.md` | Project and debugging guide |
 
 ## 4. How the Website Works
@@ -362,6 +372,8 @@ If both fields are present, the website application link is shown first.
 | `requirements` | Array of requirements |
 | `applicationUrl` | Optional official website or application portal URL |
 | `applicationEmail` | Optional application email address used to create a `mailto:` link |
+| `sourceUrl` | Optional URL to the original vacancy announcement; shown separately from the application destination |
+| `lastVerified` | Optional date the listing details were last checked, in `YYYY-MM-DD` format |
 
 The JSON is not validated against a formal schema at runtime. Keep each record
 consistent with the example; `requirements` should be an array. Some display
@@ -408,7 +420,10 @@ To add a new listing:
 
 JSON does not allow trailing commas after the final property or array item. A syntax error can prevent the website from loading the data.
 
-Always verify an opportunity's existence, eligibility conditions, closing date and application link before publishing it.
+Before publishing an opportunity, verify its existence, eligibility conditions,
+closing date and application link against a credible original source. Add that
+announcement as `sourceUrl` and record the check date as `lastVerified` only
+after performing the check. Do not guess or backdate verification dates.
 
 ## 8. CSS and Responsive Design
 
@@ -571,6 +586,19 @@ It should contain the canonical public URLs of the website's important pages. Up
 Search Console helps monitor indexing, sitemap processing and search performance.
 
 Submitting a sitemap does not guarantee that every URL will be indexed. Google determines which pages to crawl and index.
+
+The homepage, career resources, category pages and policy pages use canonical
+URLs. Category and opportunity titles, descriptions and canonical URLs are
+updated when their JavaScript content loads. Opportunity and category content
+is currently fetched in the browser, so search engines that do not render
+JavaScript may not see the complete listing content. Search Console URL
+Inspection should be used to confirm rendered content; server-side or
+build-time rendering is a future improvement if this limits indexing.
+
+The sitemap should list only public, useful pages. Do not add every vacancy
+detail URL without reviewing its value and freshness. The site uses
+`ads.txt` for its AdSense seller declaration; keep that publisher entry in sync
+with the AdSense account.
 
 ## 14. Security and Safe Rendering
 

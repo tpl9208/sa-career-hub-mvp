@@ -5,16 +5,22 @@ async function loadOpportunityDetails() {
   const opportunityId = params.get("id");
 
   if (!opportunityId) {
+    setPageMetadata({
+      title: "Opportunity Not Found | SA Career Hub",
+      description: "No opportunity was selected.",
+      canonicalUrl: `${SITE_ORIGIN}/opportunity.html`
+    });
+    setPageRobots("noindex,follow");
     container.innerHTML = `
       <h1>Opportunity not found</h1>
       <p>No opportunity was selected.</p>
-      <a href="index.html#opportunities">Browse opportunities</a>
+      <a href="/#opportunities">Browse opportunities</a>
     `;
     return;
   }
 
   try {
-    const response = await fetch("data/opportunities.json");
+    const response = await fetch("/data/opportunities.json");
 
     if (!response.ok) {
       throw new Error("Could not load opportunities.");
@@ -27,10 +33,16 @@ async function loadOpportunityDetails() {
     );
 
     if (!opportunity) {
+      setPageMetadata({
+        title: "Opportunity Not Found | SA Career Hub",
+        description: "This opportunity may have been removed or the link is incorrect.",
+        canonicalUrl: `${SITE_ORIGIN}/opportunity.html`
+      });
+      setPageRobots("noindex,follow");
       container.innerHTML = `
         <h1>Opportunity not found</h1>
         <p>This opportunity may have been removed or the link is incorrect.</p>
-        <a href="index.html#opportunities">Browse opportunities</a>
+        <a href="/#opportunities">Browse opportunities</a>
       `;
       return;
     }
@@ -38,6 +50,26 @@ async function loadOpportunityDetails() {
     const requirements = Array.isArray(opportunity.requirements)
       ? opportunity.requirements
       : [];
+
+    const pageDescription = String(opportunity.description || "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, 155);
+    const lastVerified = String(opportunity.lastVerified || "").trim();
+    const verifiedDate = getDaysSinceClosing(lastVerified) === null
+      ? ""
+      : new Date(`${lastVerified}T00:00:00`).toLocaleDateString("en-ZA", {
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        });
+
+    setPageMetadata({
+      title: `${opportunity.title} | SA Career Hub`,
+      description: pageDescription || `View requirements and application details for ${opportunity.title}.`,
+      canonicalUrl: `${SITE_ORIGIN}/opportunity.html?id=${encodeURIComponent(opportunity.id)}`
+    });
+    setPageRobots("index,follow");
 
     const closingDate = opportunity.closingDate
       ? new Date(opportunity.closingDate + "T00:00:00")
@@ -81,6 +113,16 @@ async function loadOpportunityDetails() {
         return ["https:", "http:"].includes(url.protocol)
           ? url.href
           : "";
+      } catch {
+        return "";
+      }
+    })();
+
+    const sourceUrl = String(opportunity.sourceUrl || "").trim();
+    const validSourceUrl = (() => {
+      try {
+        const url = new URL(sourceUrl);
+        return ["https:", "http:"].includes(url.protocol) ? url.href : "";
       } catch {
         return "";
       }
@@ -131,6 +173,7 @@ async function loadOpportunityDetails() {
         <p><strong>Career field:</strong> ${safeText(opportunity.field || "Not specified")}</p>
         <p><strong>Experience:</strong> ${safeText(opportunity.experience || "Not specified")}</p>
         <p><strong>Closing date:</strong> ${safeText(closingDate)}</p>
+        ${verifiedDate ? `<p><strong>Listing checked:</strong> ${safeText(verifiedDate)}</p>` : ""}
             ${
                 status === "closing-passed"
                     ? `
@@ -179,16 +222,23 @@ async function loadOpportunityDetails() {
             : "<p>Check the employer's official advert for requirements.</p>"
         }
 
+        ${validSourceUrl ? `
+          <p class="source-link">
+            <strong>Original listing:</strong>
+            <a href="${safeText(validSourceUrl)}" target="_blank" rel="noopener noreferrer">
+              View the listing source
+            </a>
+          </p>
+        ` : ""}
+
         ${applicationAction}
       </div>
     `;
 
-    document.title =
-      `${opportunity.title} | SA Career Hub`;
-
   } catch (error) {
     console.error("Error loading opportunity:", error);
 
+    setPageRobots("noindex,follow");
     container.innerHTML = `
       <h1>Unable to load opportunity</h1>
       <p>Please refresh the page and try again.</p>

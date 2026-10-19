@@ -42,7 +42,9 @@ async function loadCategory() {
   const params = new URLSearchParams(window.location.search);
   const selectedType = params.get("type");
 
-  const category = categories[selectedType];
+  const category = Object.prototype.hasOwnProperty.call(categories, selectedType)
+    ? categories[selectedType]
+    : null;
 
   const title = document.getElementById("categoryTitle");
   const description = document.getElementById("categoryDescription");
@@ -52,6 +54,12 @@ async function loadCategory() {
   const noResults = document.getElementById("noResults");
 
   if (!category) {
+    setPageMetadata({
+      title: "Category Not Found | SA Career Hub",
+      description: "This opportunity category could not be found.",
+      canonicalUrl: `${SITE_ORIGIN}/category.html`
+    });
+    setPageRobots("noindex,follow");
     title.textContent = "Category not found";
     description.textContent = "Please choose a category from our homepage.";
     heading.textContent = "";
@@ -60,13 +68,20 @@ async function loadCategory() {
     return;
   }
 
-  document.title = `${category.title} | SA Career Hub`;
+  const canonicalUrl = new URL("/category.html", SITE_ORIGIN);
+  canonicalUrl.searchParams.set("type", selectedType);
+  setPageMetadata({
+    title: `${category.title} | SA Career Hub`,
+    description: category.description,
+    canonicalUrl: canonicalUrl.href
+  });
+  setPageRobots("index,follow");
   title.textContent = category.title;
   description.textContent = category.description;
   heading.textContent = `Latest ${selectedType} opportunities`;
 
   try {
-    const response = await fetch("data/opportunities.json");
+    const response = await fetch("/data/opportunities.json");
 
     if (!response.ok) {
       throw new Error("Unable to load opportunities.");
@@ -155,6 +170,7 @@ async function loadCategory() {
   } catch (error) {
     console.error(error);
 
+    setPageRobots("noindex,follow");
     count.textContent = "We couldn't load the opportunities.";
     grid.innerHTML = "";
     noResults.classList.add("hidden");

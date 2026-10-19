@@ -11,6 +11,49 @@
  * Expected closingDate format: YYYY-MM-DD
  */
 
+const SITE_ORIGIN = "https://sacareerhub.pages.dev";
+
+function setPageMetadata({ title, description, canonicalUrl }) {
+  document.title = title;
+
+  const descriptionMeta = document.querySelector('meta[name="description"]');
+  if (descriptionMeta) {
+    descriptionMeta.content = description;
+  }
+
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) {
+    canonical.href = canonicalUrl;
+  }
+
+  const openGraphTitle = document.querySelector('meta[property="og:title"]');
+  if (openGraphTitle) {
+    openGraphTitle.content = title;
+  }
+
+  const openGraphDescription = document.querySelector(
+    'meta[property="og:description"]'
+  );
+  if (openGraphDescription) {
+    openGraphDescription.content = description;
+  }
+
+  const openGraphUrl = document.querySelector('meta[property="og:url"]');
+  if (openGraphUrl) {
+    openGraphUrl.content = canonicalUrl;
+  }
+}
+
+function setPageRobots(content) {
+  let robotsMeta = document.querySelector('meta[name="robots"]');
+  if (!robotsMeta) {
+    robotsMeta = document.createElement("meta");
+    robotsMeta.name = "robots";
+    document.head.appendChild(robotsMeta);
+  }
+  robotsMeta.content = content;
+}
+
 // Get the number of calendar days since the closing date.
 // Uses South African local calendar dates, not the current time of day.
 function getDaysSinceClosing(closingDate) {
